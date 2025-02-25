@@ -51,8 +51,8 @@ jobs:
         working-directory: Terraform/
 
       # Step 8: Apply Terraform Changes
-      # - name: "Terraform Apply"
-      #   run: terraform apply -input=false -auto-approve
-      #   working-directory: Terraform/
+      - name: "Terraform Apply"
+        run: terraform apply -input=false -auto-approve
+        working-directory: Terraform/
 
 
