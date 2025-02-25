@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - main
-  
 
 jobs:
   terraform:
-    name: "Terraform Init, Validate, and Plan"
+    name: "Terraform Init, Validate, Plan, and Apply"
     runs-on: ubuntu-latest
 
     steps:
@@ -25,20 +24,24 @@ jobs:
       # Step 3: Initialize Terraform
       - name: "Terraform Init"
         run: terraform init -input=false
+        working-directory: Terraform  # Set working directory
 
       # Step 4: Check formatting
       - name: "Terraform Fmt Check"
         run: terraform fmt -check
+        working-directory: Terraform
 
       # Step 5: Validate the configuration
       - name: "Terraform Validate"
         run: terraform validate
+        working-directory: Terraform
 
       # Step 6: Generate the execution plan
       - name: "Terraform Plan"
         run: terraform plan -input=false
-        
-      # Step 6: Generate the execution plan
-      - name: "Terraform apply"
+        working-directory: Terraform
+
+      # Step 7: Apply the plan (Optional - Use with Caution!)
+      - name: "Terraform Apply"
         run: terraform apply -input=false -auto-approve
-        
+        working-directory: Terraform
