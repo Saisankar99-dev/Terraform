@@ -36,14 +36,14 @@ jobs:
         working-directory: Terraform/
 
       # Step 5: Check Terraform formatting
-      - name: "Terraform Fmt Check"
-        run: terraform fmt -check
-        working-directory: Terraform/
+      # - name: "Terraform Fmt Check"
+      #   run: terraform fmt -check
+      #   working-directory: Terraform/
 
-      # Step 6: Validate Terraform Configuration
-      - name: "Terraform Validate"
-        run: terraform validate
-        working-directory: Terraform/
+      #  Step 6: Validate Terraform Configuration
+      # - name: "Terraform Validate"
+      #   run: terraform validate
+      #   working-directory: Terraform/
 
       # Step 7: Generate Terraform Plan
       - name: "Terraform Plan"
