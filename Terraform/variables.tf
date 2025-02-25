@@ -5,5 +5,5 @@ variable "region" {
 
 variable "bucket_prefix" {
   description = "Prefix for the S3 bucket name; a random suffix is appended for uniqueness"
-  default     = "my-unique-bucket"
+  default     = "my-unique-buckets"
 }
